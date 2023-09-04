@@ -1,0 +1,126 @@
+@media only screen and (min-width: 601px) {
+    .App {
+        --logo-size: 60px;
+        --left-menu-width: 60px;
+    }
+
+    div.App {
+
+        padding-left: var(--left-menu-width)
+    }
+    header {
+        height:var(--logo-size);
+        width:var(--logo-size);
+        position: fixed;
+        left: 0;
+        transition: all 0.8s ease-out;
+        z-index: 151;
+    }
+    header.start {
+    transform-origin:top left;
+    transform: scale(2) translateX(30px);
+    }
+    /* LEFT PANEL */
+    .menu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        /* padding-top: 60px; */
+        padding-bottom: 60px;
+        width: var(--left-menu-width);
+        min-height: 540px;
+        overflow-x: hidden;
+        transition: width 0.2s ease-in-out;
+        z-index: 10;
+        background-color: inherit;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        box-shadow: 1px 0px 10px 2px black;
+        /* border-right: solid 1px black; */
+    }
+    .menu:hover {
+        width: 280px;
+    }
+    .menu a span {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    .menu:hover li span {
+        opacity: 1;
+    }
+    /* NAVIGATION */
+    .navigation ul {
+        font-size: 30px;
+        margin-left: 15px;
+        width: 250px;
+        padding-top: 150px;
+    }
+    .navigation svg {
+        min-width: 33.75px;
+    }
+    .navigation ul span {
+        padding-left: 50px;
+        
+    }
+    .navigation li {
+        padding: 5px 0 0 0; 
+    }
+
+    /* FOOTER */
+    .footer {
+        padding-left: 15px;
+    }
+    .footer li {
+        padding-top: 3px;
+    }
+    .footer li span {
+        margin-left: 5px;
+        font-size: 0.7em;
+    }
+
+    /* SWITCHES */
+    .SwitchDarkLight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width : 23px;
+        height: 23px;
+        border-radius: 50%;
+    }
+    .dark .SwitchDarkLight {
+        background-color: #F0DB4F;
+        color : #323330;
+    }
+    .light .SwitchDarkLight {
+        background-color: #323330;
+        color : #F0DB4F;
+    }
+    .SwitchDarkLight span {
+        font-size: 18px !important;
+        margin-left: 0 !important;
+        /* padding: 0 0 5px 0; */
+    }
+
+    .SwitchLanguage {
+        margin: 0;
+        padding: 5px 0 30px 0;
+    }
+    .SwitchLanguage span {
+        margin: 0 !important;
+        width: 23px;
+        height: 23px;
+    }
+    .SwitchLanguage .fr {
+        background-position: center;
+        background-image: url('./assets/languages/fr.png');
+    }
+    .SwitchLanguage .en {
+        background-position: center;
+        background-image: url('./assets/languages/en.png');
+    }
+
+}

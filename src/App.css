@@ -1,0 +1,106 @@
+/* Variables declarations */
+.dark  {
+  --main-bg-color: #323330;
+  --main-bga-color: #323330ee;
+  --main-text-color: #ADADAC;
+  --main-link-color: #999998;
+  --main-linkHover-color: #d8c547;
+  --main-linkSelected-color: #f0db4f;
+
+  --project-title-bgcolor: #202160;
+  --project-title-color: #ebebea;
+
+  --title-firstLetter-color: #d8c547;
+
+}
+.light {
+  --main-bg-color: #e7e7ff;
+  --main-bga-color: #e7e7ffcc;
+  --main-text-color: #1E1F1D;
+  --main-link-color: #999998;
+  --main-linkHover-color: ##323330;
+  --main-linkSelected-color: #202160;
+
+  --project-title-bgcolor: #5ea5df;
+  --project-title-color: #f0db4f;
+
+  --title-firstLetter-color: #3e7eb3;
+}
+
+/* .light {
+  --main-bg-color: #f0db4f;
+  --main-text-color: #1E1F1D;
+  --main-link-color: #999998;
+  --main-linkHover-color: #484218;
+  --main-linkSelected-color: #323330;
+
+  --project-title-bgcolor: #5ea5df;
+  --project-title-color: #f0db4f;
+} */
+
+/* FONTs */
+@font-face {
+  font-family: "Fuzzy Bubbles";
+  src: url("./assets/fonts/FuzzyBubbles-Regular.ttf");
+}
+
+/* Common Setup */
+.App{
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+  position: relative;
+}
+#content div{
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+div.menu {
+  -webkit-transition: all 0.6s ease-out, color 0.1s ease-out, width 0.2s ease-in-out;
+  -moz-transition: all 0.6s ease-out, color 0.1s ease-out, width 0.2s ease-in-out;
+  -o-transition: all 0.6s ease-out, color 0.1s ease-out, width 0.2s ease-in-out;
+  transition: all 0.6s ease-out, color 0.1s ease-out, width 0.2s ease-in-out;
+  z-index: 150;
+}
+.navigation a, .navigation a .selected {
+  -webkit-transition:  color 0.2s ease-out;
+  -moz-transition:  color 0.2s ease-out;
+  -o-transition:  color 0.2s ease-out;
+  transition:  color 0.2s ease-out;
+}
+div.App{
+  margin: 0;
+  padding:0;
+}
+
+a, a:visited {
+  color : var(--main-link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  color : var(--main-linkHover-color)
+}
+
+.navigation li.selected a{
+  color: var(--main-linkSelected-color);
+}
+.selected, .selected svg {
+  -webkit-transition: all 0.6s ease-in;
+  -moz-transition: all 0.6s ease-in;
+  -o-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
+} 
+
+/* links and buttons */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
