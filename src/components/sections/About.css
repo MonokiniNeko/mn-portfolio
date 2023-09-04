@@ -1,0 +1,83 @@
+div.about > div.container {
+    position: relative;
+    max-width: 1000px;
+    min-height: 100vh;
+    display:flex;
+    margin: 0 auto;
+
+}
+
+div.about > div.container > div.text {
+    position: relative;
+    overflow-y: scroll;
+    border: solid 2px var(--main-linkSelected-color);
+    border-radius: 0 25px 25px 0;
+    color: var(--main-title-color);
+    background-color: var(--main-bga-color);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+div.about > div.container > div.text::-webkit-scrollbar {
+    display: none;
+  }
+
+div.about > div.container > div.text > h1, div.about > div.container > div.text > span {
+    position: relative;
+    z-index:10
+}
+div.about > div.container > div.text > h1::first-letter, div.about > div.container > div.text > h1 > span {
+    color: var(--title-firstLetter-color)
+}
+div.about > div.container > div.text > span { 
+    display:block;
+    margin-bottom: 0.5em;
+}
+@media only screen and (max-width: 600px) { 
+    div.about > div.container {
+        /* display: block; */
+        width: 100vw;
+        flex-direction: column;
+    }
+    div.about > div.container > div.avatar {
+        width : 100%;
+        height : 60vh;
+        margin: 0 auto;
+    }
+    div.about > div.container > div.text {
+        position:absolute;
+        top: 38vh;
+        left: 4vw;
+        right: 4vw;
+        height : 50vh;
+        overflow-y: scroll;
+        /* width : 85vw; */
+        padding : 15px;
+
+        border-radius: 0 0 25px 25px;
+        /* border-top: none; */
+
+    }
+
+}
+@media only screen and (min-width: 601px) { 
+    /* div.about > div.container { */
+        /* display: block; */
+    /* } */
+    div.about > div.container > div.avatar {
+        margin: 15px 0;
+        padding-left: 0;
+        width : 60%;
+        border-right: solid 2px var(--main-linkSelected-color);
+        border-radius: 20px;
+        /* position:absolute; */
+        overflow: show;
+        max-height: 1280px;
+    }
+
+    div.about > div.container > div.text {
+        width : 40%;
+        margin : 60px 0 30px 0;
+        padding : 15px;
+        border-left: none;
+    }
+}

@@ -1,0 +1,278 @@
+div.projects {
+    display: flex;
+    max-width : 1000px;
+    margin : 0 auto;
+    overflow : hidden;
+}
+div.projects > h2 {
+    width: 100%;
+    font-size: 36px;
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+    color: #ebebea;
+    text-shadow: 0 1px 0 #1d1e1c, 0 2px 0 #181917, 0 3px 0 #131312, 0 4px 0 #0e0e0d, 0 5px 0 #090908, 0 6px 0 #040403, 0 7px 0 #000, 0 8px 0 #000, 0 0 5px rgba(26, 30, 18, .05), 0 -1px 3px rgba(26, 30, 18, .2), 0 9px 9px rgba(26, 30, 18, .5), 0 12px 12px rgba(26, 30, 18, .5), 0 15px 15px rgba(26, 30, 18, .5);
+}
+div.projects > h2::first-letter {
+    color: #f0db4f;
+    font-size: 1.2em;  
+}
+div.projects  button {
+    width: 50%;
+    margin: 15px auto 15px auto;
+    display: block;
+    position: relative;
+
+}
+div.projects > .button {
+    width: 100%;
+    align-self: flex-end;
+    flex-basis: 100%;
+}
+.projects > div.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 21px 10px 15px -1px rgba(0,0,0,0.3),inset 8px 9px 15px -11px rgba(0,0,0,0.3);
+}
+.projects > div.hidden {
+    display: none;
+} 
+
+.dark .projects > div.project, .light .projects > div.project:hover  {
+    background-color: #282926;
+    border-color: #202160;
+    color: #ebebea;
+}
+
+.light .projects > div.project, .dark .projects > div.project:hover {
+    background-color: #e7e7ff;
+    border-color: #5ea5df;
+    color: #282926;
+}
+.projects > div.project > h4 {
+    text-align: center;
+    height: 20px;
+    margin: 0 0 14px 0;
+    padding: 10px 0 11px 0;
+    background-color: var(--project-title-bgcolor);
+    color: var(--project-title-color);
+    border-radius: 10px 10px 0 0;
+    text-shadow: 0 1px 0 #1d1e1c, 0 2px 0 #181917, 0 3px 0 #131312, 0 4px 0 #0e0e0d, 0 5px 0 #090908;
+
+}
+.projects > div.project > span.shortDescription {
+    display: block;
+    text-align: center;
+    height : 44px;
+    margin : 0;
+}
+.projects > div.project > img {
+    display: block;
+    width : 140px;
+    height : 140px;
+    border-radius: 10px;
+    margin: 5px auto 4px auto;
+}
+.projects > div.project > .tags {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    height : 32px;
+    padding : 0 1px;
+}
+.projects > div.project > .tags > span{ 
+    font-style: italic;
+}
+@media only screen and (max-width: 600px) {
+    div.projects {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 15px; 
+        justify-content: space-evenly
+    }
+    div.project {
+        width : 320px;
+        height : 320px;
+        margin-top : 15px;
+    }
+    div.projects > button { 
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    div.projects {
+        padding-top : 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+    div.project {
+        margin: 15px;
+        width : 280px;
+        height : 280px;
+    }
+}
+div.project {
+    position : relative;
+    z-index: 2;
+    border: solid 1px black;
+    cursor : pointer;
+    border-radius: 10px;
+}
+div.ReactModalPortal > div {
+    z-index : 1001 !important;
+}
+
+div.modalContent {
+    position:absolute;
+    top: 0; bottom: 0;left: 0; right: 0;
+    border-radius: 5px;
+    margin: 15px 25px;
+    padding: 15px 20px;
+    background-color: var(--main-bg-color);
+    color : var(--main-text-color);
+    overflow-y: scroll;
+    max-width : 1000px;
+}
+div.modalContent h4 {
+    padding: 15px;
+    background-color: var(--main-linkSelected-color);
+    color: var(--main-bg-color);
+    border-radius: 5px;
+}
+div.modalContent > span.description {
+    display: block;
+    max-width: 600px;
+    margin-bottom: 35px;
+    text-align: justify;
+}
+div.modalContent > span.tags {
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 15px;
+}
+div.modalContent > span.tags > span {
+    font-style: italic;
+}
+div.modalContent > a {
+    display: inline-block;
+    margin: 0 5px 10px 0;
+    text-decoration: underline;
+    color : var(--main-linkSelected-color)
+}
+div.modalContent > a:hover {
+    color : var(--main-linkHover-color);
+}
+
+@media only screen and (min-width: 601px) { 
+    div.modalContent {
+        margin : 15px auto;
+        }
+    div.modalContent h4 {
+        position: relative;
+        font-size:1.6em;
+        margin-right: 50px;
+        min-width: 800px
+    }
+    div.modalContent > h4 > img {
+        width : 140px;
+        float: right;
+        border-radius: 50%;
+        position: absolute;
+        right : 130px;
+        top: -22px;
+        border: solid 3px var(--main-bg-color);
+        border-top: solid 3px var(--main-linkSelected-color);  
+    }
+    div.modalContent button.close {
+        position : absolute;
+        top : 0;
+        right : 0;
+    }
+}
+@media only screen and (max-width: 600px) { 
+    div.modalContent h4 {
+        font-size:1.2em;
+        text-align: center;
+    }
+    div.modalContent button.close {
+        position : fixed;
+        top : 15px;
+        right : 30px;
+    }
+}
+
+div.modalContent button.close {
+
+    width : 50px;
+    height : 45px;
+    font-size: 1.4em;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    opacity: 0.6;
+    cursor:pointer;
+}
+div.modalContent button.close:hover {
+    opacity: 1;
+}
+div.modalContent .close:before, div.modalContent .close:after {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: var(--main-text-color);
+}
+div.modalContent .close:before {
+    transform: rotate(45deg);
+}
+div.modalContent .close:after {
+    transform: rotate(-45deg);
+}
+.show {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+          -webkit-tap-highlight-color: transparent;
+}
+  
+button.show {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    color: var(--main-text-color);
+    font-size: 20px;
+    border-radius: 4px;
+    box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+    background-size: 150%;
+    background-position: right;
+    transition: 1s;
+}
+@media only screen and (max-width: 600px) {
+    button.show {
+        background-position: left;
+        box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+    }
+
+}
+@media only screen and (min-width: 601px) {
+    button.show:hover {
+        background-position: left;
+        color: var(--main-link-color);
+        box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+    } 
+}
+
+  
+button.show:focus {
+    outline: none;
+}
