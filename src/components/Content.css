@@ -1,0 +1,68 @@
+section {
+    min-height: 100vh;
+    position: relative;
+    border-bottom: solid 3px black;
+
+}
+
+section > div::before {
+    background: center fixed no-repeat;
+    background-size: cover;
+    content: "";
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    
+    -webkit-transition: 0.5s -webkit-filter linear;
+    -moz-transition: 0.5s -moz-filter linear;
+    -moz-transition: 0.5s filter linear;
+    -ms-transition: 0.5s -ms-filter linear;
+    -o-transition: 0.5s -o-filter linear;
+    transition: 0.5s filter linear, 0.5s -webkit-filter linear;
+
+
+}
+/* ABOUT */
+section > div.about::before {
+    background-image: url('../assets/bg-about.jpg');
+    
+}
+.light section > div.about::before {
+    -webkit-filter: invert(1);
+    filter: invert(0.8)
+}
+
+/* PROJECTS */
+.dark section > div.projects::before {
+    background-image: url('../assets/bg-projects.dark.jpg');
+}
+.light section > div.projects::before {
+    background-image: url('../assets/bg-projects.light.jpg');
+}
+
+/* HOBBIES */
+section > div.hobbies::before {
+    background-size: 133vw;
+}
+.dark section > div.hobbies::before {
+    background-image: url('../assets/bg-hobbies.dark.jpg');
+}
+.light section > div.hobbies::before {
+    background-image: url('../assets/bg-hobbies.light.jpg');
+    
+}
+@media only screen and (max-width: 600px) {
+    section > div.hobbies::before  {
+        background-size: 150vh;
+    }
+}
+
+
+/* CONTACT */
+section > div.contact::before {
+    background-image: url('../assets/bg-contact.jpg');
+} 
